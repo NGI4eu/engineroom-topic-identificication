@@ -1,5 +1,8 @@
 # Guide to reproducing results
 
+## Objective of the project
+Obtaining explicable text analysis is the goal of this project. The input is a dataset of articles, possibly downloaded from websites using scrapers in the repository.  After running this code, you will get frequencies, co-occurrences and sentiments of terms.
+
 ## Requirements
 
 This guide assumes you have Python 3 installed with all the required packages. We suggest using [Anaconda](https://www.anaconda.com) to keep things organized and simple. Basic knowledge of Python and pandas will also be helpful, but transforming data into default format does not require it.
@@ -17,7 +20,7 @@ We suggest to maintain the same data structure and column names. It is not requi
 
 You may split the dataset into as many or as few files as you like. All articles are required to have a text column, title column, date column and link column. Links are not required to be exact links, they may be just names of sources, they just would not be transformed this way. Unless specified otherwise in initial_transform() parameters, there should exist another column with \_outside suffix (apart from text) which is used to fill NA values in the main column, in case anything goes wrong. Dates do not have to be in a consistent format – even single files may contain multiple date formats, as long as they are unambiguous for pandas to_datetime().
 
-For every source, in each month there has to be at least one article. If there is zero, you should either aggregate sources or introduce modifications to month_columns function – to aggregate by e.g. year-quarter. Most likely aggregating sources is the right solution – a very small source with a disproportionately high weight could affect results significantly.
+For every source, in each month there has to be at least one article. If there is zero, you should either aggregate sources or introduce modifications to month_columns function – to aggregate by e.g. year-quarter. Most likely aggregating sources is the right solution – a very small source with a disproportionately high weight (see below) could affect results significantly.
 
 ## Definitions
 
@@ -31,7 +34,7 @@ Date limits are defined in analysis_begin and analysis_end. analysis_begin is in
 res, assets and grams are directories to save results, data and modified articles respectively in. res and assets are strings, grams requires a dictionary with two keys: 1 (words) and 2 (bigrams). If you decide to analyse only words, you do not have to define key-value pair for key=2, but remember to modify further functions accordingly.
 
 ### Words
-important_1 and important_2 are lists of words and bigrams (respectively) for which co-occurrences will be computed. The longer the lists are, the more time the computation will take, so be careful in large datasets. sentiment_words and sentiment_bigrams are chosen to compute sentiment values, by default they are the same as terms for co-occurrences, but they are not required to be.
+important_1 and important_2 are lists of words and bigrams (respectively) for which co-occurrences will be computed. The longer the lists are, the more time the computation will take, so be careful in large datasets. sentiment_words and sentiment_bigrams are chosen to compute sentiment values, by default they are the same as terms for co-occurrences, sentiment\_words must be a subset of important\_1 (same for bigrams and 2).
 
 ## Execute code
 
