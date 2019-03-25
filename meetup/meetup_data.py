@@ -40,6 +40,8 @@ client = meetup.api.Client(client_id)
 
 cities_all = pd.concat([cities_europe, cities_america])
 dir_name = './meetup_geo/'
+if not os.path.exists(dir_name):
+    os.makedirs(dir_name)
 for i, row in cities_all.iterrows():
     city = row['country code'] + '_' + row['asciiname'].replace('/', '')
     lat, lon = row['latitude'], row['longitude']

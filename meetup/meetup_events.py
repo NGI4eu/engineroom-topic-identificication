@@ -10,6 +10,8 @@ client = meetup.api.Client(client_id)
 groups = pd.read_pickle('all_meetups_unique.pickle')
 
 dir_name = './events/'
+if not os.path.exists(dir_name):
+    os.makedirs(dir_name)
 
 counter = 0
 all_events = {}
