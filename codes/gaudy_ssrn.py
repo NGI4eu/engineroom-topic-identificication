@@ -86,19 +86,3 @@ concat()
 regression()
 co_occurrence()
 sentiments()
-
-# print('new_ssrn_text1.csv' in os.listdir('../engineroom_science/'))
-
-# while True:
-#     if 'new_ssrn_text2.csv' in os.listdir('../engineroom_science/'):
-#         sleep(30)
-#         prepare()
-#         concat()
-#         regression()
-#         co_occurrence()
-#         sentiments()
-#         break
-#     else:
-#         print('new2', 'new_ssrn_text2.csv' in os.listdir('../engineroom_science/'),
-#               'new1', 'new_ssrn_text1.csv' in os.listdir('../engineroom_science/'))
-#         sleep(60)
