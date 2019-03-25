@@ -7,11 +7,11 @@ from selenium.common.exceptions import NoSuchElementException
 
 sites_previous = '''https://www.cloudcomputing-news.net/
 https://www.developer-tech.com/
-https://www.enterprise-cio.com/'''
-sites = '''https://www.iottechnews.com/
-https://www.marketingtechnews.net/'''
-#http://virtualreality-news.net
-#https://www.telecomstechnews.com/'''
+https://www.enterprise-cio.com/
+https://www.iottechnews.com/
+https://www.marketingtechnews.net/
+http://virtualreality-news.net
+https://www.telecomstechnews.com/'''
 sites = sites.split('\n')
 
 
