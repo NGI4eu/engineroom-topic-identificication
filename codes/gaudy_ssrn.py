@@ -41,17 +41,7 @@ sentiment_bigrams = important_2
 
 
 def prepare():
-    df_april = pd.read_pickle('../engineroom_science/src/ssrn_april.p')
-    df_april['date'] = df_april['date'].apply(lambda x: pd.to_datetime(x, format='%d-%m-%Y')).astype(str)
-    print(df_april['date'])
-
     dfs = [
-        df_april,
-        pd.read_csv('../engineroom_science/src/ssrn_text_mp.csv'),
-        pd.read_csv('../engineroom_science/src/ssrn_textkg.csv'),
-        pd.read_csv('../engineroom_science/new_ssrn_text1.csv'),
-        pd.read_csv('../engineroom_science/new_ssrn_text2.csv'),
-        pd.read_csv('../scraping_science/20171209_scraping_ssrn/ssrn_text_190309.csv'),
     ]
     print([x.shape for x in dfs])
     df = pd.concat(dfs, axis=0)
@@ -59,11 +49,6 @@ def prepare():
     df['date'] = df['date'].apply(lambda x: x.replace('Posted: ', ''))
     df = df.loc[df['date'] != 'Posted:']
     print(df.shape)
-    # for date in df['date']:
-    #     try:
-    #         pd.to_datetime(date)
-    #     except Exception as ex:
-    #         print(ex, date)
     df = initial_transform(df, analysis_begin, analysis_end, date_columns=['date', ], title_columns=['title', ])
     df = months_columns(df)
     df['link'] = 'ssrn'

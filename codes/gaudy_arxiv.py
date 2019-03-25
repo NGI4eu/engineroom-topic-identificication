@@ -40,14 +40,6 @@ sentiment_bigrams = important_2
 
 def prepare():
     dfs = [
-        pd.read_pickle('../engineroom_science/src/20171125_arxiv.p'),
-        pd.read_pickle('../engineroom_science/src/20180114_arxiv.p'),
-        pd.read_pickle('../engineroom_science/src/20180926_arxiv.p'),
-        pd.read_pickle('../engineroom_science/src/arxiv_00b.p'),
-        pd.read_pickle('../engineroom_science/src/arxiv_april_fixed_date.p'),
-        pd.read_pickle('../scraping_science/20171124_scraping_arxiv/20190309_arxiv_cs.p'),
-        pd.read_pickle('../scraping_science/20171124_scraping_arxiv/20190309_arxiv_econ.p'),
-        pd.read_pickle('../scraping_science/20171124_scraping_arxiv/20190309_arxiv_eess.p'),
     ]
     print([x.shape for x in dfs])
     df = pd.concat(dfs, axis=0)
