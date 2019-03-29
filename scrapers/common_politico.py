@@ -58,10 +58,19 @@ for cat in categories:
             info = get_info(link)
             if info is None:
                 continue
+<<<<<<< HEAD
+=======
+#             print(info['date'])
+>>>>>>> 0cd159f401e3f5c0fe800013dd578d725f38fc98
             if pd.to_datetime(info['date']) < time_limit:
                 time_limit_reached = True
                 break
             art_dicts.append(info)
+<<<<<<< HEAD
+=======
+#             print(info)
+#             time.sleep(random.uniform(0.75, 2.5))
+>>>>>>> 0cd159f401e3f5c0fe800013dd578d725f38fc98
         i=i+1
         links.clear()
         print(len(art_dicts))

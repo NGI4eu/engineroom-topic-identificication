@@ -134,7 +134,11 @@ arts = []
 time_limit = pd.to_datetime('now') - pd.Timedelta('190 days')  # 3
 articles = []  # keep all articles in this list
 print(topics, topics[6:])
+<<<<<<< HEAD
 for topic in topics:
+=======
+for topic in topics[6:]:
+>>>>>>> 0cd159f401e3f5c0fe800013dd578d725f38fc98
     print(topic)
     driver.get(topic)
 

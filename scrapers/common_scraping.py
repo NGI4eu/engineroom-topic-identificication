@@ -19,7 +19,11 @@ def full_driver():
 
     # load ublock
     # It should throw an error if path is wrong (and it is surely wrong unless you change it)
+<<<<<<< HEAD
     path_to_ublock = '/home/username/.config/chromium/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/1.15.24_0'
+=======
+    path_to_ublock = '/home/lukasz/.config/chromium/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/1.15.24_0'
+>>>>>>> 0cd159f401e3f5c0fe800013dd578d725f38fc98
     chrome_options.add_argument('--load-extension=' + path_to_ublock)
 
     # if you feel like it and are really time-constrained, you may try --headless argument as well
