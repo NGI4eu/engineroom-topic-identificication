@@ -1,6 +1,5 @@
 # engineroom
 
-<<<<<<< HEAD
 # Results website: [ngi.delabapps.eu](https://ngi.delabapps.eu/)
 
 ## EU Engineroom focuses on identifying and evaluating the key enabling technologies and topics that will underpin the Next Generation Internet in 2025.
